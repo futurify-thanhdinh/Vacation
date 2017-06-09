@@ -12,7 +12,7 @@ namespace ProfileService.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private IPositionService _positionservice;
+        private readonly IPositionService _positionservice;
 
         public ValuesController(IPositionService positionservice)
         {

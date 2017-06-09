@@ -33,9 +33,9 @@ namespace ProfileService
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
-            services.AddTransient<IPositionService, PositionService>();
+            services.AddScoped<IPositionService, PositionService>();
+            services.AddMvc();
           
         }
 

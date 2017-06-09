@@ -6,7 +6,7 @@ using ProfileService.Model;
 
 namespace ProfileService.IServiceInterfaces
 {
-    interface IPositionService
+    public interface IPositionService
     {
         Task<Position> GetAsync(int Id);
         Task CreateAsync();
