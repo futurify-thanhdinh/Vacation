@@ -1,0 +1,9 @@
+D:\GitHub\Vacation\Vacation.common\bin\Debug\netcoreapp1.1\Vacation.common.deps.json
+D:\GitHub\Vacation\Vacation.common\bin\Debug\netcoreapp1.1\Vacation.common.runtimeconfig.json
+D:\GitHub\Vacation\Vacation.common\bin\Debug\netcoreapp1.1\Vacation.common.runtimeconfig.dev.json
+D:\GitHub\Vacation\Vacation.common\bin\Debug\netcoreapp1.1\Vacation.common.dll
+D:\GitHub\Vacation\Vacation.common\bin\Debug\netcoreapp1.1\Vacation.common.pdb
+D:\GitHub\Vacation\Vacation.common\obj\Debug\netcoreapp1.1\Vacation.common.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Vacation.common\obj\Debug\netcoreapp1.1\Vacation.common.AssemblyInfo.cs
+D:\GitHub\Vacation\Vacation.common\obj\Debug\netcoreapp1.1\Vacation.common.dll
+D:\GitHub\Vacation\Vacation.common\obj\Debug\netcoreapp1.1\Vacation.common.pdb
