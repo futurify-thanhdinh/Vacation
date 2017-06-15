@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ProfileService.Migrations
 {
-    public partial class InitialProfileMigration : Migration
+    public partial class InitialProfileDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

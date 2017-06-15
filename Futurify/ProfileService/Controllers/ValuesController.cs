@@ -24,10 +24,7 @@ namespace ProfileService.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _positionservice.CreateAsync();
-            var position = _positionservice.GetAsync(1);
-            //return new string[] { "value1", "value2" };
-            return new string[] { position.Result.PositionName };
+            return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
@@ -41,6 +38,7 @@ namespace ProfileService.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+
         }
 
         // PUT api/values/5

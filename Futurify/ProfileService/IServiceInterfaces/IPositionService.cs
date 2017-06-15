@@ -9,6 +9,9 @@ namespace ProfileService.IServiceInterfaces
     public interface IPositionService
     {
         Task<Position> GetAsync(int Id);
-        Task CreateAsync();
+        Task<IEnumerable<Position>> GetAllAsync();
+        Task<int> CreateAsync(Position position);
+        Task<int> UpdateAsync(Position position);
+        Task<int> RemovePositionAsync(int PositionId);
     }
 }
