@@ -6,24 +6,34 @@ using Microsoft.AspNetCore.Mvc;
 using ProfileService.IServiceInterfaces;
 using ProfileService.Model;
 using ProfileService.Services;
+using RawRabbit;
+using Vacation.common;
+using Vacation.common.Events;
 
 namespace ProfileService.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private readonly IPositionService _positionservice;
 
-        public ValuesController(IPositionService positionservice)
+        private readonly IPositionService _positionservice;
+        private IBusClient _rawRabbitBus;
+        public ValuesController(IPositionService positionservice, IBusClient rawRabbitBus)
         {
             _positionservice = positionservice;
+            _rawRabbitBus = rawRabbitBus;
         }
         
         
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> Get()
         {
+            await _rawRabbitBus.PublishAsync<DemoRabbit>(new DemoRabbit
+            {
+                message = "OK"
+            });
+
             return new string[] { "value1", "value2" };
         }
 

@@ -9,7 +9,8 @@
       "app.common.core/1.0.0": {
         "dependencies": {
           "RawRabbit": "1.10.3",
-          "RawRabbit.Extensions": "1.10.3"
+          "RawRabbit.Extensions": "1.10.3",
+          "RawRabbit.vNext": "1.10.3"
         },
         "runtime": {
           "App.common.core.dll": {}

@@ -12,11 +12,13 @@ using ProfileService.Model;
 using Microsoft.EntityFrameworkCore;
 using ProfileService.IServiceInterfaces;
 using ProfileService.Services;
+using RawRabbit.Extensions.Client;
 
 namespace ProfileService
 {
     public class Startup
     {
+        private string _contentRootPath;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -25,6 +27,8 @@ namespace ProfileService
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            _contentRootPath = env.ContentRootPath;
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -36,6 +40,9 @@ namespace ProfileService
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
             services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<ITeamService, TeamSevice>();
+
+            services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
+
             services.AddMvc();
           
         }

@@ -9,3 +9,5 @@ D:\GitHub\Vacation\Futurify\ProfileService\obj\Debug\netcoreapp1.1\ProfileServic
 D:\GitHub\Vacation\Futurify\ProfileService\obj\Debug\netcoreapp1.1\ProfileService.pdb
 D:\GitHub\Vacation\Futurify\ProfileService\bin\Debug\netcoreapp1.1\Vacation.common.dll
 D:\GitHub\Vacation\Futurify\ProfileService\bin\Debug\netcoreapp1.1\Vacation.common.pdb
+D:\GitHub\Vacation\Futurify\ProfileService\bin\Debug\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\ProfileService\bin\Debug\netcoreapp1.1\App.common.core.pdb
