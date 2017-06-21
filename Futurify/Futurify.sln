@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileService", "ProfileSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vacation.common", "Vacation.common\Vacation.common.csproj", "{B83CD572-8908-4E70-A1F2-DD6BB22AC38E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification", "Notification\Notification.csproj", "{5D977D1C-45E1-47E2-80FE-C37758229355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.common.core", "App.common.core\App.common.core.csproj", "{1D245FB4-CA90-4A2F-A668-659E5C8F5E2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B83CD572-8908-4E70-A1F2-DD6BB22AC38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83CD572-8908-4E70-A1F2-DD6BB22AC38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83CD572-8908-4E70-A1F2-DD6BB22AC38E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D977D1C-45E1-47E2-80FE-C37758229355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D977D1C-45E1-47E2-80FE-C37758229355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D977D1C-45E1-47E2-80FE-C37758229355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D977D1C-45E1-47E2-80FE-C37758229355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D245FB4-CA90-4A2F-A668-659E5C8F5E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D245FB4-CA90-4A2F-A668-659E5C8F5E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D245FB4-CA90-4A2F-A668-659E5C8F5E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D245FB4-CA90-4A2F-A668-659E5C8F5E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
