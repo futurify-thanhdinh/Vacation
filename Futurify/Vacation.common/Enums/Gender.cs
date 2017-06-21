@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Vacation.common.Enums
 {
     public enum Gender
     {
-        Male, Female
+        Male = 1, Female = 0
     }
 }

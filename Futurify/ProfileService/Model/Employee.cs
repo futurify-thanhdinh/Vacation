@@ -23,7 +23,7 @@ namespace ProfileService.Model
         public string Email { get; set; }
 
         [ForeignKey("Position")]
-        public int PositionId { get; set; }
+        public int? PositionId { get; set; }
         
         [ForeignKey("PositionId")]
         public Position Position { get; set; }
@@ -31,17 +31,17 @@ namespace ProfileService.Model
         public string Avatar { get; set; }
 
         [ForeignKey("Apartment")]
-        public int ApartmentId { get; set; }
+        public int? ApartmentId { get; set; }
 
         [ForeignKey("ApartmentId")]
         public Apartment Apartment { get; set; }
 
         [ForeignKey("Team")]
-        public int TeamId { get; set; }
+        public int? TeamId { get; set; }
 
         [ForeignKey("TeamId")]
         public Team Team { get; set; }
 
-        public int RemainingDay { get; set; }
+        public int? RemainingDay { get; set; }
     }
 }

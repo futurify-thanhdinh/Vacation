@@ -4156,8 +4156,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
-          "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
-          "Microsoft.AspNetCore": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2"
         }
       }
@@ -10753,8 +10751,8 @@
     },
     "Vacation.common/1.0.0": {
       "type": "project",
-      "path": "../../Vacation.common/Vacation.common.csproj",
-      "msbuildProject": "../../Vacation.common/Vacation.common.csproj"
+      "path": "../Vacation.common/Vacation.common.csproj",
+      "msbuildProject": "../Vacation.common/Vacation.common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10793,8 +10791,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "D:\\GitHub\\Vacation\\Vacation.common\\Vacation.common.csproj": {
-              "projectPath": "D:\\GitHub\\Vacation\\Vacation.common\\Vacation.common.csproj"
+            "D:\\GitHub\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj": {
+              "projectPath": "D:\\GitHub\\Vacation\\Futurify\\Vacation.common\\Vacation.common.csproj"
             }
           }
         }

@@ -41,16 +41,16 @@ namespace ProfileService.Migrations
                 {
                     EmployeeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ApartmentId = table.Column<int>(nullable: false),
+                    ApartmentId = table.Column<int>(nullable: true),
                     Avatar = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     Gender = table.Column<int>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    PositionId = table.Column<int>(nullable: false),
-                    RemainingDay = table.Column<int>(nullable: false),
-                    TeamId = table.Column<int>(nullable: false)
+                    PositionId = table.Column<int>(nullable: true),
+                    RemainingDay = table.Column<int>(nullable: true),
+                    TeamId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,13 +60,13 @@ namespace ProfileService.Migrations
                         column: x => x.ApartmentId,
                         principalTable: "Apartments",
                         principalColumn: "ApartmentId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Employees_Positions_PositionId",
                         column: x => x.PositionId,
                         principalTable: "Positions",
                         principalColumn: "PositionId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -116,7 +116,7 @@ namespace ProfileService.Migrations
                 column: "TeamId",
                 principalTable: "Teams",
                 principalColumn: "TeamId",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

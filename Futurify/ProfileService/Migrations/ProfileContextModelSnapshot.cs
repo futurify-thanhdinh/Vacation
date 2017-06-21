@@ -33,7 +33,7 @@ namespace ProfileService.Migrations
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ApartmentId");
+                    b.Property<int?>("ApartmentId");
 
                     b.Property<string>("Avatar");
 
@@ -47,11 +47,11 @@ namespace ProfileService.Migrations
 
                     b.Property<string>("PhoneNumber");
 
-                    b.Property<int>("PositionId");
+                    b.Property<int?>("PositionId");
 
-                    b.Property<int>("RemainingDay");
+                    b.Property<int?>("RemainingDay");
 
-                    b.Property<int>("TeamId");
+                    b.Property<int?>("TeamId");
 
                     b.HasKey("EmployeeId");
 
@@ -98,18 +98,15 @@ namespace ProfileService.Migrations
                 {
                     b.HasOne("ProfileService.Model.Apartment", "Apartment")
                         .WithMany()
-                        .HasForeignKey("ApartmentId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ApartmentId");
 
                     b.HasOne("ProfileService.Model.Position", "Position")
                         .WithMany()
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PositionId");
 
                     b.HasOne("ProfileService.Model.Team", "Team")
                         .WithMany("Employees")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TeamId");
                 });
 
             modelBuilder.Entity("ProfileService.Model.Team", b =>

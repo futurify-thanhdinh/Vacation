@@ -33,17 +33,12 @@ namespace ProfileService.Model
 
             context.Database.MigrateAsync();
 
-            ProfileContext.Seed(context);
+            Seed(context);
         }
 
         private static void Seed(ProfileContext context)
         {
-            //seed code
-            Position position = new Position();
-            position.PositionId = 1;
-            position.PositionName = "Dev";
-            context.Positions.Add(position);
-            context.SaveChangesAsync();
+           
         }
        
     }

@@ -8,7 +8,7 @@ using ProfileService.Model;
 namespace ProfileService.Migrations
 {
     [DbContext(typeof(ProfileContext))]
-    [Migration("20170615080534_InitialProfileDatabase")]
+    [Migration("20170615103609_InitialProfileDatabase")]
     partial class InitialProfileDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace ProfileService.Migrations
                     b.Property<int>("EmployeeId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ApartmentId");
+                    b.Property<int?>("ApartmentId");
 
                     b.Property<string>("Avatar");
 
@@ -48,11 +48,11 @@ namespace ProfileService.Migrations
 
                     b.Property<string>("PhoneNumber");
 
-                    b.Property<int>("PositionId");
+                    b.Property<int?>("PositionId");
 
-                    b.Property<int>("RemainingDay");
+                    b.Property<int?>("RemainingDay");
 
-                    b.Property<int>("TeamId");
+                    b.Property<int?>("TeamId");
 
                     b.HasKey("EmployeeId");
 
@@ -99,18 +99,15 @@ namespace ProfileService.Migrations
                 {
                     b.HasOne("ProfileService.Model.Apartment", "Apartment")
                         .WithMany()
-                        .HasForeignKey("ApartmentId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ApartmentId");
 
                     b.HasOne("ProfileService.Model.Position", "Position")
                         .WithMany()
-                        .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("PositionId");
 
                     b.HasOne("ProfileService.Model.Team", "Team")
                         .WithMany("Employees")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TeamId");
                 });
 
             modelBuilder.Entity("ProfileService.Model.Team", b =>

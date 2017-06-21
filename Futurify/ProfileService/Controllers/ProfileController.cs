@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,11 +17,11 @@ namespace ProfileService.Controllers
     [Route("api/Profile")]
     public class ProfileController : Controller
     {
-        private ProfileContext _context;
+        private ITeamService _teamService;
         private IPositionService _positionService;
-        public ProfileController(ProfileContext context, IPositionService positionService)
+        public ProfileController(ITeamService teamService, IPositionService positionService)
         {
-            _context = context;
+            _teamService = teamService;
             _positionService = positionService;
         }
         // GET: api/Profile
@@ -66,6 +67,13 @@ namespace ProfileService.Controllers
         public async Task<int> Delete(int PositionId)
         {
             return await _positionService.RemovePositionAsync(PositionId);
+        }
+
+        [HttpGet]
+        [Route("GetAllTeam")]
+        public IEnumerable<Team> GetAllTeam()
+        {
+            return _teamService.GetAllTeam();
         }
     }
 }
