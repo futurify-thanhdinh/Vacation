@@ -37,6 +37,8 @@ namespace ProfileService.Migrations
 
                     b.Property<string>("Avatar");
 
+                    b.Property<DateTime?>("BirthDate");
+
                     b.Property<string>("Email");
 
                     b.Property<string>("FirstName");

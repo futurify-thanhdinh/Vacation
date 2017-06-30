@@ -6,15 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\images\Abbott.jpg" />
-    <Content Include="wwwroot\images\alice.jpg" />
-    <Content Include="wwwroot\images\andrew.jpg" />
-    <Content Include="wwwroot\images\Arnold.jpg" />
-    <Content Include="wwwroot\images\Barrera.jpg" />
-    <Content Include="wwwroot\images\Blair.jpg" />
-    <Content Include="wwwroot\images\Boyle.jpg" />
-    <Content Include="wwwroot\images\carl.jpg" />
-    <Content Include="wwwroot\images\Christy.jpg" />
+    <Content Include="wwwroot\Avatars\Abbott.jpg" />
+    <Content Include="wwwroot\Avatars\alice.jpg" />
+    <Content Include="wwwroot\Avatars\andrew.jpg" />
+    <Content Include="wwwroot\Avatars\Arnold.jpg" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -37,6 +32,9 @@
   <ItemGroup>
     <ProjectReference Include="..\App.common.core\App.common.core.csproj" />
     <ProjectReference Include="..\Vacation.common\Vacation.common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Avatars\" />
   </ItemGroup>
 
 </Project>

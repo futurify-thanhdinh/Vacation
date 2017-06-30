@@ -42,6 +42,7 @@ namespace ProfileService
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
             services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<ITeamService, TeamSevice>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",

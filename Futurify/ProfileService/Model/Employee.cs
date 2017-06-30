@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Vacation.common.Enums;
 
 namespace ProfileService.Model
@@ -18,6 +20,9 @@ namespace ProfileService.Model
 
         public string PhoneNumber { get; set; }
 
+        public DateTime? BirthDate { get; set; }
+
+        
         public Gender? Gender { get; set; }
 
         public string Email { get; set; }

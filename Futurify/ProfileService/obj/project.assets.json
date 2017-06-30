@@ -4225,6 +4225,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v1.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Http": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
           "RawRabbit": "1.10.3",
           "RawRabbit.Extensions": "1.10.3",

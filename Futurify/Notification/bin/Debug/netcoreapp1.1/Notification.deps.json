@@ -1363,6 +1363,7 @@
       },
       "app.common.core/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
           "RawRabbit": "1.10.3",
           "RawRabbit.Extensions": "1.10.3",

@@ -23,6 +23,7 @@ namespace ProfileService.Adapter
         public static PositionViewModel ToViewModel(Position position)
         {
             var ViewModel = new PositionViewModel();
+            ViewModel.Id = position.PositionId;
             ViewModel.Name = position.PositionName;
             return ViewModel;
         }
