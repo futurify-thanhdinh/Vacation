@@ -1,0 +1,29 @@
+{
+  "name": "angular-country-state-select",
+  "description": "A simple directive for Country and State Select",
+  "main": "dist/angular-country-state-select.js",
+  "authors": [
+    "Efren Bautista"
+  ],
+  "license": "MIT",
+  "homepage": "http://efrenbautista.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5"
+  },
+  "_release": "492d6049e3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "492d6049e3dcbe08b038214666c294b481b87828"
+  },
+  "_source": "https://github.com/nerfe/angularjs-country-state-select.git",
+  "_target": "*",
+  "_originalSource": "angular-country-state-select"
+}

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report", "Report\Report.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedule", "Schedule\Schedule.csproj", "{67243421-BCF5-449E-9ED1-B58564A4AB9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "Dashboard\Dashboard.csproj", "{4A41AAAE-DF8E-48A3-9B51-DD31BE814AC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{67243421-BCF5-449E-9ED1-B58564A4AB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67243421-BCF5-449E-9ED1-B58564A4AB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67243421-BCF5-449E-9ED1-B58564A4AB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A41AAAE-DF8E-48A3-9B51-DD31BE814AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A41AAAE-DF8E-48A3-9B51-DD31BE814AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A41AAAE-DF8E-48A3-9B51-DD31BE814AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A41AAAE-DF8E-48A3-9B51-DD31BE814AC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

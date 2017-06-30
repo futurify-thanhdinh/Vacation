@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using ProfileService.IServiceInterfaces;
 using ProfileService.Services;
 using RawRabbit.Extensions.Client;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace ProfileService
 {
@@ -40,9 +42,18 @@ namespace ProfileService
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
             services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<ITeamService, TeamSevice>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
 
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAllOrigins"));
+            });
             services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
-
+             
             services.AddMvc();
           
         }
@@ -50,6 +61,8 @@ namespace ProfileService
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCors("AllowAllOrigins");
+            app.UseStaticFiles();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             ProfileContext.UpdateDatabase(app);

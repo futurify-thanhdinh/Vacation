@@ -6,7 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Include="wwwroot\images\Abbott.jpg" />
+    <Content Include="wwwroot\images\alice.jpg" />
+    <Content Include="wwwroot\images\andrew.jpg" />
+    <Content Include="wwwroot\images\Arnold.jpg" />
+    <Content Include="wwwroot\images\Barrera.jpg" />
+    <Content Include="wwwroot\images\Blair.jpg" />
+    <Content Include="wwwroot\images\Boyle.jpg" />
+    <Content Include="wwwroot\images\carl.jpg" />
+    <Content Include="wwwroot\images\Christy.jpg" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

@@ -1,0 +1,21 @@
+{
+  "name": "angular-country-state-select",
+  "version": "0.0.1",
+  "description": "A simple directive for Country and State Select",
+  "main": "dist/angular-country-state-select.js",
+  "authors": [
+    "Efren Bautista"
+  ],
+  "license": "MIT",
+  "homepage": "http://efrenbautista.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5"
+  }
+}
