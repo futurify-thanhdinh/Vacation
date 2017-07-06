@@ -15,7 +15,7 @@ using ProfileService.Model.ViewModel;
 
 namespace ProfileService.Controllers
 {
-    [Produces("application/json")]
+    
     [Route("api/Employee")]
     public class EmployeeController : Controller
     {
@@ -40,7 +40,7 @@ namespace ProfileService.Controllers
         public  IEnumerable<EmployeeViewModel> Get()
         {
             var EmployeeViewModelList = new List<EmployeeViewModel>();
-            foreach (Employee employee in  _employeeService.GetAllAsync())
+            foreach (Employee employee in  _employeeService.GetAll())
             {
                 EmployeeViewModelList.Add(EmployeeAdapter.ToViewModel(employee));
             }
@@ -54,28 +54,44 @@ namespace ProfileService.Controllers
         {
             return "value";
         }
-        
-        // POST: api/Employee
-        [HttpPost]
+
+        // POST: api/Employee/UpdateInfo
+        [HttpPut]
         [Route("UpdateInfo")]
-        public void Post(EmployeeBindingModel employee)
+        public IActionResult Update([FromBody]EmployeeBindingModel EmployeeBindingModel)
         {
-            var ok = employee;
-            var i = 0;
+            int EmployeeIsUpdatedSuccessfully = _employeeService.Update(EmployeeAdapter.ToModel(EmployeeBindingModel));
+            if (EmployeeIsUpdatedSuccessfully == 1)
+                return Ok(EmployeeBindingModel);
+            else
+                return BadRequest();
+        }
+
+        // POST: api/Employee/Create
+        [HttpPost]
+        [Route("Create")]
+        public IActionResult Create([FromBody]EmployeeBindingModel EmployeeBindingModel)
+        {
+             int EmployeeIsCreatedSuccessfully = _employeeService.Create(EmployeeAdapter.ToModel(EmployeeBindingModel));
+            if (EmployeeIsCreatedSuccessfully == 1)
+                return Ok(EmployeeBindingModel);
+            else
+                return NoContent(); 
         }
         
         // PUT: api/Employee/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpDelete]
+        [Route("Delete/{EmployeeId}")]
+        public IActionResult Delete(int EmployeeId)
         {
+            int EmployeeIsRemovedSuccessfully = _employeeService.Remove(EmployeeId);
+            if (EmployeeIsRemovedSuccessfully == 1)
+                return Ok();
+            else
+                return NoContent();
         }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-
+         
+        // POST: api/Employee/UploadAvatar
         [HttpPost]
         [Route("UploadAvatar/{EmployeeId}")]
         public IActionResult UploadAvatar(int EmployeeId)

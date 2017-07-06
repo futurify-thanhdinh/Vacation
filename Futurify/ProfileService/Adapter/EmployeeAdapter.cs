@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ProfileService.Model;
+using ProfileService.Model.BindingModel;
 using ProfileService.Model.ViewModel;
 
 namespace ProfileService.Adapter
@@ -21,6 +22,20 @@ namespace ProfileService.Adapter
             ViewModel.PositionId = (int)employee.PositionId;
             ViewModel.Avatar = employee.Avatar;
             ViewModel.BirthDate = (DateTime)employee.BirthDate;
+            return ViewModel;
+        }
+        public static Employee ToModel(EmployeeBindingModel employee)
+        {
+            var ViewModel = new Employee();
+            ViewModel.EmployeeId = employee.Id;
+            ViewModel.FirstName = employee.FirstName;
+            ViewModel.LastName = employee.LastName;
+            ViewModel.PhoneNumber = employee.PhoneNumber;
+            ViewModel.RemainingDay = employee.RemainDayOff;
+            ViewModel.Email = employee.Email;
+            ViewModel.PositionId = employee.PositionId;
+            ViewModel.Avatar = employee.Avatar;
+            ViewModel.BirthDate = employee.BirthDate;
             return ViewModel;
         }
     }

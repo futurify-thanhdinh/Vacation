@@ -27,12 +27,12 @@ namespace ProfileService.Controllers
         
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<string>> Get()
+        public IEnumerable<string> Get()
         {
-            await _rawRabbitBus.PublishAsync<DemoRabbit>(new DemoRabbit
-            {
-                message = "OK"
-            });
+            //await _rawRabbitBus.PublishAsync<DemoRabbit>(new DemoRabbit
+            //{
+            //    message = "OK"
+            //});
 
             return new string[] { "value1", "value2" };
         }

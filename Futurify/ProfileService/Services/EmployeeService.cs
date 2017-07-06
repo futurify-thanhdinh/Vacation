@@ -20,19 +20,27 @@ namespace ProfileService.Services
             _env = env;
             _profileContext = profileContext;
         }
-        public Task<int> CreateAsync(Employee employee)
+        public int Create(Employee employee)
         {
-            throw new NotImplementedException();
+            employee.RemainingDay = 12;
+            _profileContext.Add(employee);
+            return _profileContext.SaveChanges();
         }
 
-        public IEnumerable<Employee> GetAllAsync()
+        public IEnumerable<Employee> GetAll()
         {
             return  _profileContext.Employees.ToList();
         }
 
-        public Employee GetAsync(int Id)
+        public Employee Get(int Id)
         {
             return _profileContext.Employees.SingleOrDefault(s => s.EmployeeId == Id);
+        }
+
+        public int Remove(int EmployeeId)
+        {
+            _profileContext.Remove(Get(EmployeeId));
+            return _profileContext.SaveChanges();
         }
 
         public Task<int> RemovePositionAsync(int employeeId)
@@ -40,14 +48,15 @@ namespace ProfileService.Services
             throw new NotImplementedException();
         }
 
-        public Task<int> UpdateAsync(Employee employee)
+        public int Update(Employee employee)
         {
-            throw new NotImplementedException();
+            _profileContext.Update(employee);
+            return _profileContext.SaveChanges();
         }
 
         public async Task UpdateAvatar(int EmployeeId, string Url)
         {
-            var existingEmployee = GetAsync(EmployeeId);
+            var existingEmployee = Get(EmployeeId);
             if (existingEmployee == null)
                 throw new NullReferenceException("Null Employee");
             if (!string.IsNullOrEmpty(existingEmployee.Avatar))

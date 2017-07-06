@@ -13,7 +13,7 @@ using ProfileService.Model.ViewModel;
 
 namespace ProfileService.Controllers
 {
-    [Produces("application/json")]
+     
     [Route("api/Position")]
     public class PositionController : Controller
     {
@@ -46,34 +46,30 @@ namespace ProfileService.Controllers
         }
         
         // POST: api/Profile
-        [HttpPost("CreatePosition")]
-        public async Task<int> CreatePosition([FromBody]PositionBindingModel newPosition)
+        [HttpPost("Create")]
+        public async Task<PositionBindingModel> CreatePosition([FromBody]PositionBindingModel newPosition)
         {
-            return await _positionService.CreateAsync(PositionAdapter.ToModel(newPosition));
+            await _positionService.CreateAsync(PositionAdapter.ToModel(newPosition));
+            return newPosition;
         }
         
         // PUT: api/Profile/5
         [HttpPut]
-        [Route("UpdatePosition/{PositionId}")]
-        public async Task<int> UpdatePosition(int PositionId, [FromBody]PositionBindingModel updatePosition)
+        [Route("UpdateInfo")]
+        public async Task<PositionBindingModel> UpdatePosition([FromBody]PositionBindingModel updatePosition)
         { 
             
-            return await _positionService.UpdateAsync(PositionAdapter.ToModel(updatePosition, PositionId));
+            await _positionService.UpdateAsync(PositionAdapter.ToModel(updatePosition));
+            return updatePosition;
         }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete]
-        [Route("RemovePosition/{PositionId}")]
+        [Route("Delete/{PositionId}")]
         public async Task<int> Delete(int PositionId)
         {
             return await _positionService.RemovePositionAsync(PositionId);
         }
-
-        [HttpGet]
-        [Route("GetAllTeam")]
-        public IEnumerable<Team> GetAllTeam()
-        {
-            return _teamService.GetAllTeam();
-        }
+          
     }
 }

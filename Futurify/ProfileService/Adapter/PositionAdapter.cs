@@ -10,14 +10,13 @@ namespace ProfileService.Adapter
 {
     public static class PositionAdapter
     {
-        public static Position ToModel(PositionBindingModel bindingModel, int? Id = -1)
+        public static Position ToModel(PositionBindingModel bindingModel)
         {
             if (bindingModel == null)
                 return null;
             var model = new Position();
-            model.PositionName = bindingModel.PositionName;
-            if (Id.HasValue )
-                model.PositionId = (int)Id;
+            model.PositionName = bindingModel.Name; 
+            model.PositionId = bindingModel.Id;
             return model;
         }
         public static PositionViewModel ToViewModel(Position position)
