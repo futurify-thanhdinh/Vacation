@@ -14,9 +14,27 @@ namespace ProfileService.Services
         {
             _context = context;
         }
+
+        public int Create(Team team)
+        {
+            _context.Teams.Add(team);
+            return _context.SaveChanges();
+        }
+
+        public Team Get(int TeamId)
+        {
+            return _context.Teams.SingleOrDefault(s => s.TeamId == TeamId);
+        }
+
         public List<Team> GetAllTeam()
         {
             return _context.Teams.ToList();
+        }
+
+        public int Update(Team team)
+        {
+            _context.Teams.Update(team);
+            return _context.SaveChanges();
         }
     }
 }

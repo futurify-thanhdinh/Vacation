@@ -8,9 +8,10 @@ using ProfileService.Model;
 namespace ProfileService.Migrations
 {
     [DbContext(typeof(ProfileContext))]
-    partial class ProfileContextModelSnapshot : ModelSnapshot
+    [Migration("20170706093543_ChangeEmployeeListFKTeamTable")]
+    partial class ChangeEmployeeListFKTeamTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -55,6 +56,8 @@ namespace ProfileService.Migrations
 
                     b.Property<int?>("TeamId");
 
+                    b.Property<int?>("TeamId1");
+
                     b.HasKey("EmployeeId");
 
                     b.HasIndex("ApartmentId");
@@ -62,6 +65,8 @@ namespace ProfileService.Migrations
                     b.HasIndex("PositionId");
 
                     b.HasIndex("TeamId");
+
+                    b.HasIndex("TeamId1");
 
                     b.ToTable("Employees");
                 });
@@ -107,6 +112,10 @@ namespace ProfileService.Migrations
                     b.HasOne("ProfileService.Model.Team", "Team")
                         .WithMany("Employees")
                         .HasForeignKey("TeamId");
+
+                    b.HasOne("ProfileService.Model.Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId1");
                 });
 
             modelBuilder.Entity("ProfileService.Model.Team", b =>

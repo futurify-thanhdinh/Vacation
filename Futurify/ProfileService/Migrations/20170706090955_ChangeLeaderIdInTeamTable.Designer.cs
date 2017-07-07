@@ -8,9 +8,10 @@ using ProfileService.Model;
 namespace ProfileService.Migrations
 {
     [DbContext(typeof(ProfileContext))]
-    partial class ProfileContextModelSnapshot : ModelSnapshot
+    [Migration("20170706090955_ChangeLeaderIdInTeamTable")]
+    partial class ChangeLeaderIdInTeamTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

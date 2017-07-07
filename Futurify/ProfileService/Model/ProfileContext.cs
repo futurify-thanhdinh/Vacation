@@ -25,12 +25,13 @@ namespace ProfileService.Model
         public DbSet<Apartment> Apartments { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Team>().HasMany<Employee>();
             base.OnModelCreating(modelBuilder);
         }
         public static void UpdateDatabase(IApplicationBuilder app)
         {
             var context = app.ApplicationServices.GetRequiredService<ProfileContext>();
-
+            
             context.Database.MigrateAsync();
 
             Seed(context);

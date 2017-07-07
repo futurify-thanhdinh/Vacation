@@ -14,12 +14,12 @@ namespace ProfileService.Model
         [ForeignKey("Employee")]
         public int LeaderId { get; set; }
 
-        [ForeignKey("ID")]
+        [ForeignKey("LeaderId")]
         public Employee Leader { set; get; }
 
         public string TeamName { get; set; }
 
-        [InverseProperty("Team")]
+
         public ICollection<Employee> Employees { get; set; }
     }
 }
