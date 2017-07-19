@@ -38,5 +38,15 @@ namespace ProfileService.Adapter
             ViewModel.BirthDate = employee.BirthDate;
             return ViewModel;
         }
+
+        public static IEnumerable<ScheduleOwnerViewModel> ToScheduleViewModel(IEnumerable<Employee> employees)
+        {
+            IList<ScheduleOwnerViewModel> ScheduleOwnerViewModelList = new List<ScheduleOwnerViewModel>();
+            foreach (Employee employee in employees)
+            {
+                ScheduleOwnerViewModelList.Add(new ScheduleOwnerViewModel() { Id = employee.EmployeeId, Name = employee.LastName + " " + employee.FirstName });
+            }
+            return ScheduleOwnerViewModelList;
+        }
     }
 }

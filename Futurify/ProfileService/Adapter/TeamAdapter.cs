@@ -38,6 +38,7 @@ namespace ProfileService.Adapter
             Team team = new Team();
             team.TeamId = teamBindingModel.Id;
             team.LeaderId = teamBindingModel.LeaderId;
+            team.Leader = _employeeService.Get(teamBindingModel.LeaderId);
             team.TeamName = teamBindingModel.TeamName;
             team.Employees = teamMembers;
             return team;
@@ -59,6 +60,7 @@ namespace ProfileService.Adapter
                 teamViewModel.Name = team.TeamName;
                 teamViewModel.LeaderId = team.LeaderId;
                 teamViewModel.MemberIds = teamMemberIds;
+                TeamViewModelList.Add(teamViewModel);
             }
             return TeamViewModelList;
         }

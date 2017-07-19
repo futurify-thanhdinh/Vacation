@@ -19,7 +19,7 @@ namespace ProfileService.Model
 
         public string TeamName { get; set; }
 
-
+         [InverseProperty("Team")]
         public ICollection<Employee> Employees { get; set; }
     }
 }

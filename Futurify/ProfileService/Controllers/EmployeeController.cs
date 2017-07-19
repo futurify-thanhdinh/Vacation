@@ -49,10 +49,11 @@ namespace ProfileService.Controllers
         }
 
         // GET: api/Employee/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("GetScheduleOwners")]
+        public IEnumerable<ScheduleOwnerViewModel> GetScheduleOwners()
         {
-            return "value";
+            return EmployeeAdapter.ToScheduleViewModel(_employeeService.GetAll());
         }
 
         // POST: api/Employee/UpdateInfo

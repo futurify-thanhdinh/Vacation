@@ -32,7 +32,8 @@ namespace ProfileService.Controllers
         [Route("GetAllTeam")]
         public IEnumerable<TeamViewModel> GetAllTeam()
         {
-            return TeamAdapter.ToTeamViewModel(_teamService.GetAllTeam());
+            IEnumerable<TeamViewModel> teamViewModel = TeamAdapter.ToTeamViewModel(_teamService.GetAllTeam());
+            return teamViewModel;
         }
 
         // GET api/values/5

@@ -8,8 +8,8 @@ using ProfileService.Model;
 namespace ProfileService.Migrations
 {
     [DbContext(typeof(ProfileContext))]
-    [Migration("20170706090955_ChangeLeaderIdInTeamTable")]
-    partial class ChangeLeaderIdInTeamTable
+    [Migration("20170711091436_InitialProfileDatabase")]
+    partial class InitialProfileDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

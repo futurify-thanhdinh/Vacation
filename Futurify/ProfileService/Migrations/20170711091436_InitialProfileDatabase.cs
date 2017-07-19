@@ -43,6 +43,7 @@ namespace ProfileService.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApartmentId = table.Column<int>(nullable: true),
                     Avatar = table.Column<string>(nullable: true),
+                    BirthDate = table.Column<DateTime>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     Gender = table.Column<int>(nullable: true),
@@ -75,7 +76,6 @@ namespace ProfileService.Migrations
                 {
                     TeamId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ID = table.Column<int>(nullable: true),
                     LeaderId = table.Column<int>(nullable: false),
                     TeamName = table.Column<string>(nullable: true)
                 },
@@ -83,11 +83,11 @@ namespace ProfileService.Migrations
                 {
                     table.PrimaryKey("PK_Teams", x => x.TeamId);
                     table.ForeignKey(
-                        name: "FK_Teams_Employees_ID",
-                        column: x => x.ID,
+                        name: "FK_Teams_Employees_LeaderId",
+                        column: x => x.LeaderId,
                         principalTable: "Employees",
                         principalColumn: "EmployeeId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -106,9 +106,9 @@ namespace ProfileService.Migrations
                 column: "TeamId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Teams_ID",
+                name: "IX_Teams_LeaderId",
                 table: "Teams",
-                column: "ID");
+                column: "LeaderId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Employees_Teams_TeamId",

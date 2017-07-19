@@ -3,7 +3,11 @@ D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Schedule.runtimecon
 D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Schedule.runtimeconfig.dev.json
 D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Schedule.dll
 D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Schedule.pdb
-D:\GitHub\Vacation\Futurify\Schedule\obj\Debug\netcoreapp1.1\Schedule.csprojResolveAssemblyReference.cache
 D:\GitHub\Vacation\Futurify\Schedule\obj\Debug\netcoreapp1.1\Schedule.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\Schedule\obj\Debug\netcoreapp1.1\Schedule.dll
 D:\GitHub\Vacation\Futurify\Schedule\obj\Debug\netcoreapp1.1\Schedule.pdb
+D:\GitHub\Vacation\Futurify\Schedule\obj\Debug\netcoreapp1.1\Schedule.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Vacation.common.dll
+D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\App.common.core.pdb
+D:\GitHub\Vacation\Futurify\Schedule\bin\Debug\netcoreapp1.1\Vacation.common.pdb

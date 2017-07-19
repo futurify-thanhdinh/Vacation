@@ -41,11 +41,11 @@ namespace ProfileService.Model
         [ForeignKey("ApartmentId")]
         public Apartment Apartment { get; set; }
 
-        //[ForeignKey("Team")]
-        //public int? TeamId { get; set; }
+        [ForeignKey("Team")]
+        public int? TeamId { get; set; }
 
-        //[ForeignKey("TeamId")]
-        //public Team Team { get; set; }
+        [ForeignKey("TeamId")]
+        public Team Team { get; set; }
 
         public int? RemainingDay { get; set; }
     }

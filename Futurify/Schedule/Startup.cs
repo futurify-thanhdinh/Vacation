@@ -4,9 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Schedule.IServiceInterfaces;
+using Schedule.Models;
+using Schedule.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace Schedule
 {
@@ -27,6 +33,18 @@ namespace Schedule
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ScheduleContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("ScheduleDatabase").Value));
+            services.AddScoped<IVacationService, VacationService>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAllOrigins"));
+            });
             // Add framework services.
             services.AddMvc();
         }
@@ -36,7 +54,9 @@ namespace Schedule
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            app.UseCors("AllowAllOrigins");
+            ScheduleContext.UpdateDatabase(app);
+            //app.UseStaticFiles();
             app.UseMvc();
         }
     }

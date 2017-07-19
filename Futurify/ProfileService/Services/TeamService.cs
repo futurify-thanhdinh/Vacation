@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ProfileService.IServiceInterfaces;
 using ProfileService.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProfileService.Services
 {
@@ -23,17 +24,22 @@ namespace ProfileService.Services
 
         public Team Get(int TeamId)
         {
-            return _context.Teams.SingleOrDefault(s => s.TeamId == TeamId);
+            return _context.Teams.Include(e => e.Employees).SingleOrDefault(s => s.TeamId == TeamId);
         }
 
         public List<Team> GetAllTeam()
-        {
-            return _context.Teams.ToList();
+        { 
+            return _context.Teams.Include(e => e.Employees).ToList();
         }
 
         public int Update(Team team)
         {
-            _context.Teams.Update(team);
+            Team existingTeam = _context.Teams.Include(e => e.Employees).SingleOrDefault(t => t.TeamId == team.TeamId);
+            existingTeam.Leader = team.Leader;
+            existingTeam.LeaderId = team.LeaderId;
+            existingTeam.TeamName = team.TeamName;
+            existingTeam.Employees = team.Employees;
+            _context.Teams.Update(existingTeam);
             return _context.SaveChanges();
         }
     }
