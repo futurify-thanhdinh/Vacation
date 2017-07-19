@@ -3,7 +3,6 @@ D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Security.runtimecon
 D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Security.runtimeconfig.dev.json
 D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Security.dll
 D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Security.pdb
-D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.csprojResolveAssemblyReference.cache
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.dll
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.pdb
