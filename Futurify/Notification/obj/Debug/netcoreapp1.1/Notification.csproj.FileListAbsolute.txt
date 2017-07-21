@@ -10,3 +10,6 @@ D:\GitHub\Vacation\Futurify\Notification\bin\Debug\netcoreapp1.1\Vacation.common
 D:\GitHub\Vacation\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.dll
 D:\GitHub\Vacation\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.pdb
+D:\GitHub\Vacation\Futurify\Notification\obj\Debug\netcoreapp1.1\Notification.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Futurify\Notification\bin\Debug\netcoreapp1.1\PhoneNumbers.dll
+D:\GitHub\Vacation\Futurify\Notification\bin\Debug\netcoreapp1.1\PhoneNumbers.pdb

@@ -42,6 +42,11 @@ namespace Schedule.Services
             return _context.Vacations.ToList();
         }
 
+        public IEnumerable<Event> GetEmployeeVacations(int Id)
+        {
+            return _context.Vacations.Where(v => v.OwnerId == Id).ToList();
+        }
+
         public int Update(Event model)
         {
             Event existingVacation = Get(model.EventId);

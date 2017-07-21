@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,7 +53,11 @@ namespace ProfileService.Controllers
         [Route("GetScheduleOwners")]
         public IEnumerable<ScheduleOwnerViewModel> GetScheduleOwners()
         {
-            return EmployeeAdapter.ToScheduleViewModel(_employeeService.GetAll());
+            List<ScheduleOwnerViewModel> ScheduleViewModels = (List<ScheduleOwnerViewModel>) EmployeeAdapter.ToScheduleViewModel(_employeeService.GetAll());
+             
+            ScheduleViewModels.Add(new ScheduleOwnerViewModel { Id = - 1, Name = "Select All"});
+
+            return ScheduleViewModels;
         }
 
         // POST: api/Employee/UpdateInfo

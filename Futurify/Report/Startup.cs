@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Report.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Report
 {
@@ -27,6 +29,7 @@ namespace Report
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ReportContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("ReportDatabase").Value));
             // Add framework services.
             services.AddMvc();
         }

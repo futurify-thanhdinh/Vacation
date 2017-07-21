@@ -19,29 +19,33 @@ namespace Schedule.Controllers
         {
             _vacationService = vacationService;
         }
-        // GET api/values
+        // GET api/schedule/GetAllVacations
         [HttpGet]
-        [Route("GetAllVacations")]
-        public IEnumerable<VacationViewModel> GetAllVacation()
+        [Route("GetAllVacations/{Id}")]
+        public IEnumerable<VacationViewModel> GetAllVacation(int? Id)
         {
-            var Vacations = _vacationService.GetAllVacations();
-            if (Vacations != null)
+            if(Id.HasValue && Id == -1)
             {
-                return VacationAdapter.ToViewModel(Vacations);
+                var Vacations = _vacationService.GetAllVacations();
+                if (Vacations != null)
+                {
+                    return VacationAdapter.ToViewModel(Vacations);
+                }
+                else
+                {
+                    return null;
+                }
             }
             else
             {
-                return null;
+                return VacationAdapter.ToViewModel(_vacationService.GetEmployeeVacations((int)Id));
             }
 
             //return Ok(new List<VacationViewModel> { new VacationViewModel() { Id = 3, Start = new DateTime(2017,7,19, 7, 30, 0, DateTimeKind.Utc), End = new DateTime(2017, 7, 19, 12, 30, 0, DateTimeKind.Utc),
             //OwnerId = 1, IsAllDay = false, Title= "asdadfdsfasd", Description = "ok hello ae"} });
 
         }
-
-       
-
-        // POST api/values
+        // POST api/schedule/Create
         [HttpPost]
         [Route("Create")]
         public IActionResult Create([FromBody]VacationBindingModel vacationBindingModel)
@@ -62,7 +66,7 @@ namespace Schedule.Controllers
             }
         }
 
-        // PUT api/values/5
+        // PUT api/schedule/Update
         [HttpPut("Update")]
         public IActionResult Update([FromBody]VacationBindingModel vacationBindingModel)
         {
@@ -81,7 +85,7 @@ namespace Schedule.Controllers
             
         }
 
-        // DELETE api/values/5
+        // DELETE api/schedule/Delete/{id}
         [HttpDelete("Delete/{Id}")]
         public IActionResult Delete(int? Id)
         {

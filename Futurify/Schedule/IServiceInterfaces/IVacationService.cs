@@ -14,5 +14,6 @@ namespace Schedule.IServiceInterfaces
         int Create(VacationBindingModel bindingModel);
         int Update(Event bindingModel);
         int Delete(int Id);
+        IEnumerable<Event> GetEmployeeVacations(int Id);
     }
 }

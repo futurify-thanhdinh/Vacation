@@ -6,3 +6,10 @@ D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Security.pdb
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.dll
 D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.pdb
+D:\GitHub\Vacation\Futurify\Security\obj\Debug\netcoreapp1.1\Security.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\App.common.core.dll
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Vacation.common.dll
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\App.common.core.pdb
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\Vacation.common.pdb
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\PhoneNumbers.dll
+D:\GitHub\Vacation\Futurify\Security\bin\Debug\netcoreapp1.1\PhoneNumbers.pdb

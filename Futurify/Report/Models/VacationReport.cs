@@ -8,6 +8,6 @@ namespace Report.Models
 {
     public class VacationReport : BaseObject
     {
-
+        
     }
 }
