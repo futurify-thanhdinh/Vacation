@@ -14,22 +14,25 @@ using PhoneNumbers;
 using Security.Adapters;
 using Security.IServiceInterfaces;
 using Security.Models.BindingModels;
+using System.Security.Claims;
 
 namespace Security.Controllers
 {
-    [Route("api/authentication")]
-    public class AuthenticationController : Controller
+    [Route("api/account")]
+    public class AccountController : Controller
     {
         private IAccountService _accountService; 
-        public AuthenticationController(IAccountService accountService)
+        public AccountController(IAccountService accountService)
         {
             _accountService = accountService;
         }
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("me/permissions/{id}")]
+        public async Task<IEnumerable<string>> GetPermissions(int id)
         {
-            return new string[] { "value1", "value2" };
+            IEnumerable<string> permissions = await _accountService.GetPermissionsOfAccountAsync(id);
+            return permissions;
         }
 
         // GET api/values/5

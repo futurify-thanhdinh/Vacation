@@ -12,3 +12,10 @@ D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.c
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
 D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.deps.json
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.dll
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.pdb
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.csprojResolveAssemblyReference.cache
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
+D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
