@@ -8698,15 +8698,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\F12-ThanhDinh\\.nuget\\packages\\": {}
+    "C:\\Users\\dinhv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
+      "projectUniqueName": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
       "projectName": "Dashboard",
-      "projectPath": "D:\\GitHub\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
-      "outputPath": "D:\\GitHub\\Vacation\\Futurify\\Dashboard\\obj\\",
+      "projectPath": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\Dashboard\\Dashboard.csproj",
+      "outputPath": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\Dashboard\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
