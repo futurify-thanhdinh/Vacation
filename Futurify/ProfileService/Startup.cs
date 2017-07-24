@@ -40,6 +40,7 @@ namespace ProfileService
         {
             // Add framework services.
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("VacationDatabase").Value));
+            services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
             services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<ITeamService, TeamSevice>();
             services.AddScoped<IEmployeeService, EmployeeService>();

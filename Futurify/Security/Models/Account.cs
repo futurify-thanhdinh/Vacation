@@ -26,6 +26,8 @@ namespace Security.Models
 
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public AccountType? Type { get; set; }
 
         public bool? EmailVerified { get; set; }
 
@@ -55,4 +57,6 @@ namespace Security.Models
 
         public virtual List<AccountPermission> AccountPermissions { get; set; }
     }
+
+     
 }

@@ -59,6 +59,9 @@ namespace Security
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.Con
+
             app.UseCors("AllowAllOrigins");
             app.UseMiddleware<TokenProviderMiddleware>();
            

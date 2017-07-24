@@ -2,6 +2,6 @@
     "Username": "guest",
     "Password": "guest",
     "VirtualHost": "/",
-    "Port": 5672,
+    "Port": 5673,
     "Hostnames": [ "localhost" ]
 }

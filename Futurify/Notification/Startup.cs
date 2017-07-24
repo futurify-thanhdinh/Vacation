@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App.common.core.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Notification.IServiceInterfaces;
+using Notification.Models;
+using Notification.Services;
 using RawRabbit.Extensions.Client;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Notification
 {
@@ -31,8 +37,12 @@ namespace Notification
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<MessageContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NotificationDatabase")));
+            services.Configure<ConfigSendEmail>(Configuration.GetSection("ConfigSendEmail"));
             services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
+            services.AddScoped<IMessageService, MessageService>();
+            services.AddSingleton<IDataStaticService, DataStaticService>();
+            services.AddScoped<IMailService, MailService>();
             // Add framework services.
             services.AddMvc();
         }
@@ -44,6 +54,12 @@ namespace Notification
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            var dbContextOptions = new DbContextOptionsBuilder<MessageContext>().UseSqlServer(Configuration.GetConnectionString("NotificationDatabase")).Options;
+            var _rawRabbitClient = app.ApplicationServices.GetService<IBusClient>();
+            var configSendMail = app.ApplicationServices.GetRequiredService<IOptions<ConfigSendEmail>>();
+
+
         }
     }
 }
