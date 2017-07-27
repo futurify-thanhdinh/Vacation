@@ -24,7 +24,7 @@ namespace Security.Setup
                 sysadmin = new Account
                 {
                     UserName = "sysadmin@gmail.com",
-                    AccountPermissions = _context.Permissions.Select(p => new AccountPermission { PermissionId = p.Id }).ToList(),
+                    AccountPermissions = _context.Permissions.Select(p => new AccountPermission { PermissionId = p.PermissionId }).ToList(),
                     IsSystemAdmin = true,
                    Type = AccountType.Admin
                 };

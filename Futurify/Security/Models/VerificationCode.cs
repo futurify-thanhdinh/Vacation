@@ -17,24 +17,24 @@ namespace Security.Models
         public virtual Account Account { get; set; }
         [ForeignKey("Account")]
         public int AccountId { get; set; }
-
-        public string VerifyCode { get; set; }
+        public DateTime CreatedAt { get; set; }
         public DateTime ExpiredAt { get; set; }
-        public bool? Checked { get; set; }
+        public VerificationReceiverType ReceiverType { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
         public VerificationPurpose Purpose { get; set; }
-
-        public string SetEmail { get; set; }
-        public string SetPhoneNumber { get; set; }
-
-        public int? Retry { get; set; }
-        public int? Resend { get; set; }
+        public string Code { get; set; } 
+        public bool Used { get; set; }
+        public int SendCounter { get; set; }
+        public int CheckFailedCounter { get; set; }
+        public string CodeReceiver { get; set; }
     }
-
+    public enum VerificationReceiverType
+    {
+        Email
+    }
     public enum VerificationPurpose
     {
-        Email,
         RegistrationPhoneNumber,
-        Password
+        ResetPassword
     }
 }

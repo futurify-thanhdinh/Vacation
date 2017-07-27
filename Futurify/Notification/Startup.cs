@@ -10,10 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Notification.IServiceInterfaces;
 using Notification.Models;
-using Notification.Services;
-using RawRabbit.Extensions.Client;
+using Notification.Services; 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Notification.EventHandlers;
+using Vacation.common.Events;
+using RawRabbit.vNext;
+using RawRabbit;
+using App.common.core;
 
 namespace Notification
 {
@@ -43,6 +47,7 @@ namespace Notification
             services.AddScoped<IMessageService, MessageService>();
             services.AddSingleton<IDataStaticService, DataStaticService>();
             services.AddScoped<IMailService, MailService>();
+            services.Configure<MicroserviceSetting>(Configuration.GetSection("Microservices"));
             // Add framework services.
             services.AddMvc();
         }
@@ -52,14 +57,25 @@ namespace Notification
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            MessageContext.UpdateDatabase(app);
+            app.UseMvc(); 
+            _setupEvents(app, env);
+        }
 
-            app.UseMvc();
-
+        private void _setupEvents(IApplicationBuilder app, IHostingEnvironment env)
+        {
+             
+            var Context = app.ApplicationServices.GetService<MessageContext>();
             var dbContextOptions = new DbContextOptionsBuilder<MessageContext>().UseSqlServer(Configuration.GetConnectionString("NotificationDatabase")).Options;
             var _rawRabbitClient = app.ApplicationServices.GetService<IBusClient>();
             var configSendMail = app.ApplicationServices.GetRequiredService<IOptions<ConfigSendEmail>>();
 
 
+            var _accountCreatedHandle = new AccountCreatedHandlers(_rawRabbitClient, env, configSendMail, dbContextOptions);
+            _rawRabbitClient.SubscribeAsync<AccountCreatedForEmail>(_accountCreatedHandle.HandleAsync);
+
+            var _requestGorgotPasswordHandle = new RequestForgotPasswordForEmailHandler(_rawRabbitClient, env, configSendMail, dbContextOptions);
+            _rawRabbitClient.SubscribeAsync<RequestForgotPasswordForEmail>(_requestGorgotPasswordHandle.HandleAsync);
         }
     }
 }

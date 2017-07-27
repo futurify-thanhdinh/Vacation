@@ -22,7 +22,7 @@ namespace ProfileService.Model
 
         public DateTime? BirthDate { get; set; }
 
-         
+        [JsonConverter(typeof(StringEnumConverter))]
         public Gender? Gender { get; set; }
 
         public string Email { get; set; }
@@ -33,13 +33,7 @@ namespace ProfileService.Model
         [ForeignKey("PositionId")]
         public Position Position { get; set; }
 
-        public string Avatar { get; set; }
-
-        [ForeignKey("Apartment")]
-        public int? ApartmentId { get; set; }
-
-        [ForeignKey("ApartmentId")]
-        public Apartment Apartment { get; set; }
+        public string Avatar { get; set; } 
 
         [ForeignKey("Team")]
         public int? TeamId { get; set; }

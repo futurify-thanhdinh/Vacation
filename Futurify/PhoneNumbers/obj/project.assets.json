@@ -4387,15 +4387,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dinhv\\.nuget\\packages\\": {}
+    "C:\\Users\\F12-ThanhDinh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
+      "projectUniqueName": "D:\\GitHub\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
       "projectName": "PhoneNumbers",
-      "projectPath": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
-      "outputPath": "D:\\Futurify\\Github\\Vacation\\Vacation\\Futurify\\PhoneNumbers\\obj\\",
+      "projectPath": "D:\\GitHub\\Vacation\\Futurify\\PhoneNumbers\\PhoneNumbers.csproj",
+      "outputPath": "D:\\GitHub\\Vacation\\Futurify\\PhoneNumbers\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.6"

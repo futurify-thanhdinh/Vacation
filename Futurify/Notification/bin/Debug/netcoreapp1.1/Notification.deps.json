@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "1257162a6f0d5786099a8ddc4995ab1567c996e8"
+    "signature": "cd77c381ebe54f3467fd2b642efbf12a0be76b4f"
   },
   "compilationOptions": {
     "defines": [
@@ -24,11 +24,15 @@
       "notification/1.0.0": {
         "dependencies": {
           "App.common.core": "1.0.0",
+          "MailKit": "1.16.2",
+          "MailMergeLib": "5.2.0.1",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.2",
           "Microsoft.AspNetCore.Mvc": "1.1.3",
           "Microsoft.Extensions.Logging.Debug": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
+          "System.Xml.XDocument": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0",
           "Vacation.common": "1.0.0"
         },
         "runtime": {
@@ -36,6 +40,33 @@
         },
         "compile": {
           "Notification.dll": {}
+        }
+      },
+      "anglesharp/0.9.9": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.Requests": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/AngleSharp.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/AngleSharp.dll": {}
         }
       },
       "jwt/3.0.0": {
@@ -49,6 +80,47 @@
         },
         "compile": {
           "lib/netstandard1.3/JWT.dll": {}
+        }
+      },
+      "mailkit/1.16.2": {
+        "dependencies": {
+          "MimeKit": "1.16.2",
+          "NETStandard.Library": "1.6.1",
+          "Portable.BouncyCastle": "1.8.1.2",
+          "System.Data.Common": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Net.NameResolution": "4.3.0",
+          "System.Net.NetworkInformation": "4.3.0",
+          "System.Net.Security": "4.3.1",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding.CodePages": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/MailKit.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/MailKit.dll": {}
+        }
+      },
+      "mailmergelib/5.2.0.1": {
+        "dependencies": {
+          "AngleSharp": "0.9.9",
+          "MailKit": "1.16.2",
+          "MimeKit": "1.16.2",
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.Specialized": "4.3.0",
+          "System.Data.Common": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Xml.XmlSerializer": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.6/MailMergeLib.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/MailMergeLib.dll": {}
         }
       },
       "microsoft.applicationinsights/2.2.0": {
@@ -1343,6 +1415,25 @@
           "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "mimekit/1.16.2": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Portable.BouncyCastle": "1.8.1.2",
+          "System.Data.Common": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Net.NameResolution": "4.3.0",
+          "System.Net.NetworkInformation": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding.CodePages": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/MimeKit.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/MimeKit.dll": {}
+        }
+      },
       "newtonsoft.json/10.0.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
@@ -1357,6 +1448,17 @@
         },
         "compile": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "portable.bouncycastle/1.8.1.2": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/BouncyCastle.Crypto.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/BouncyCastle.Crypto.dll": {}
         }
       },
       "rabbitmq.client/4.1.0": {
@@ -1697,6 +1799,50 @@
           }
         }
       },
+      "system.net.networkinformation/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.Sockets": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Principal.Windows": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Overlapped": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtimes/linux/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "rid": "linux",
+            "assetType": "runtime"
+          },
+          "runtimes/osx/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "rid": "osx",
+            "assetType": "runtime"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Net.NetworkInformation.dll": {}
+        }
+      },
       "system.net.websockets/4.3.0": {
         "dependencies": {
           "Microsoft.Win32.Primitives": "4.3.0",
@@ -1773,6 +1919,9 @@
             "rid": "win",
             "assetType": "runtime"
           }
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Text.Encoding.CodePages.dll": {}
         }
       },
       "system.text.encodings.web/4.3.1": {
@@ -1810,6 +1959,33 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "system.xml.xmlserializer/4.0.11": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
       "app.common.core/1.0.0": {
@@ -3512,12 +3688,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "anglesharp/0.9.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z3h0p8u7p7QFSStWaC+u9cx7+IaRvMmLXqczx5WYW5V9t58kGQg3xMyb4iRI2mIEnePQq2pp2sQAadEl4GhmBg==",
+      "path": "anglesharp/0.9.9",
+      "hashPath": "anglesharp.0.9.9.nupkg.sha512"
+    },
     "jwt/3.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-594k7ie8ETtmTh0bkkHVNULDgcqLq1oz4R8isO8U5QWsDB4XoByKGrfQhyXSqyggewlNdlFzes2rJu9E+RD+pg==",
       "path": "jwt/3.0.0",
       "hashPath": "jwt.3.0.0.nupkg.sha512"
+    },
+    "mailkit/1.16.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+TmqWZlDbON05CpqiH6N++LUtqwW6SjUzc526srAogqJvjeTuAYN6vni5jc+riNBc3CFKS23VlyYqOxlZ943IA==",
+      "path": "mailkit/1.16.2",
+      "hashPath": "mailkit.1.16.2.nupkg.sha512"
+    },
+    "mailmergelib/5.2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L/LBp6Q5rk8CoCwNCkAzuX2Dwg8FzpkY2raui0WgLd65TI4iAfQeiGYMzZDOUCwru9mvDA9BspLVapnDCXCY5Q==",
+      "path": "mailmergelib/5.2.0.1",
+      "hashPath": "mailmergelib.5.2.0.1.nupkg.sha512"
     },
     "microsoft.applicationinsights/2.2.0": {
       "type": "package",
@@ -3550,14 +3747,14 @@
     "microsoft.aspnetcore.authentication/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nG9AcO8Do23L/KcQayxx0r11wEPjB303TCV/0pqE8j3q1eMcamThFDQ3RtD/qXwk0rmMbyP3zGgZ+5I8TSLvCQ==",
+      "sha512": "sha512-1r1C6isVMKJcs/DQhH+/xmMp1jQwRZ9SZdA5AfXzSYhaCQqSN13aDR2is0uik3ojvXi+SBvu0h+ZmbveapZJig==",
       "path": "microsoft.aspnetcore.authentication/1.1.2",
       "hashPath": "microsoft.aspnetcore.authentication.1.1.2.nupkg.sha512"
     },
     "microsoft.aspnetcore.authentication.cookies/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oqcuY3+r/vuanOnM1LulYMq3HJk7AGIxYYcmC6qRfLt2aEUQLzpwsgA3wYj456XbzNSXf51hu0m+fjj/V2LsVQ==",
+      "sha512": "sha512-KCEI8qGmcczOHKxJtQnNdGmwqId+aOk8tg7gYr+PKZwSLDJR52MIfhiiDsG034qx6tYB1qW/3J/mZfUZ2Xp65Q==",
       "path": "microsoft.aspnetcore.authentication.cookies/1.1.2",
       "hashPath": "microsoft.aspnetcore.authentication.cookies.1.1.2.nupkg.sha512"
     },
@@ -3592,7 +3789,7 @@
     "microsoft.aspnetcore.cryptography.keyderivation/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LG4cN68fvL151M/+sVfOl3DkLe8a/GPSHnQtde/8hth7Najpb64ZQE3q0WRvhflc8GzStdNWmxb8Sx3j3PWliQ==",
+      "sha512": "sha512-4YrJErNcmsgjMSD5vpVyAzp6/EOJepa/cmvxnjFuQkSg+ocpNTWnwl/Hz2Xdp+xNjB7X8I6hFpfitGylS+S4VA==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/1.1.2",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.1.1.2.nupkg.sha512"
     },
@@ -3690,7 +3887,7 @@
     "microsoft.aspnetcore.identity/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OwKAA/0j+T5zOC1NkQLq1aqIh+K7AfYRktwqZ1UxVYoAd5wqvR2YQ8PXskAL7gG7+02UoOVlMAQrbBTg0efg6A==",
+      "sha512": "sha512-SxU9lIIBC/DjjR3sFiFeM7lg+acJFggyhqc3hJNtWKiMHT/RZmv1yjfsITMfA69Z01qU5IMCFEFOM/bp9BZuNQ==",
       "path": "microsoft.aspnetcore.identity/1.1.2",
       "hashPath": "microsoft.aspnetcore.identity.1.1.2.nupkg.sha512"
     },
@@ -4135,12 +4332,26 @@
       "path": "microsoft.net.http.headers/1.1.2",
       "hashPath": "microsoft.net.http.headers.1.1.2.nupkg.sha512"
     },
+    "mimekit/1.16.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n/yoKMfFXUSUzQPz+wvl+eArDA01XntJ3z40DBUduAEpx8QXEpLMRhr177Lwi23dHRA4/aDqb3+X2b6r/X/1hw==",
+      "path": "mimekit/1.16.2",
+      "hashPath": "mimekit.1.16.2.nupkg.sha512"
+    },
     "newtonsoft.json/10.0.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-iwElSU2IXmwGvytJsezyDML2ZWDkG2JzTYzlU/BNlmzMdlmRvbnwITsGGY74gwVEpDli1UdOLkMT7/3jxWvXzA==",
       "path": "newtonsoft.json/10.0.2",
       "hashPath": "newtonsoft.json.10.0.2.nupkg.sha512"
+    },
+    "portable.bouncycastle/1.8.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G0pWrYwtjjiyka+twqqphegc4ddDWskvf2uWu2YiAUNdaAz0UYa/eXBlt+xjafby5Opa6J1ySw5MPezwiGi9aQ==",
+      "path": "portable.bouncycastle/1.8.1.2",
+      "hashPath": "portable.bouncycastle.1.8.1.2.nupkg.sha512"
     },
     "rabbitmq.client/4.1.0": {
       "type": "package",
@@ -4275,6 +4486,13 @@
       "path": "system.io.pipes/4.3.0",
       "hashPath": "system.io.pipes.4.3.0.nupkg.sha512"
     },
+    "system.net.networkinformation/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zNVmWVry0pAu7lcrRBhwwU96WUdbsrGL3azyzsbXmVNptae1+Za+UgOe9Z6s8iaWhPn7/l4wQqhC56HZWq7tkg==",
+      "path": "system.net.networkinformation/4.3.0",
+      "hashPath": "system.net.networkinformation.4.3.0.nupkg.sha512"
+    },
     "system.net.websockets/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4323,6 +4541,13 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "system.xml.xmlserializer/4.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FrazwwqfIXTfq23mfv4zH+BjqkSFNaNFBtjzu3I9NRmG8EELYyrv/fJnttCIwRMFRR/YKXF1hmsMmMEnl55HGw==",
+      "path": "system.xml.xmlserializer/4.0.11",
+      "hashPath": "system.xml.xmlserializer.4.0.11.nupkg.sha512"
     },
     "app.common.core/1.0.0": {
       "type": "project",

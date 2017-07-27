@@ -24,7 +24,7 @@ namespace Security.Models
         public virtual DbSet<Permission> Permissions { get; set; }
         public virtual DbSet<AccountPermission> AccountsPermissions { get; set; }
         public virtual DbSet<RolePermission> RolePermissions { get; set; } 
-        public virtual DbSet<VerificationCode> VerificationCodes { get; set; } 
+        public  DbSet<VerificationCode> VerificationCodes { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

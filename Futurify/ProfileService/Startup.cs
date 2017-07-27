@@ -15,6 +15,8 @@ using ProfileService.Services;
 using RawRabbit.Extensions.Client;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
+using ProfileService.EventHandlers;
+using Vacation.common.Events;
 
 namespace ProfileService
 {
@@ -69,6 +71,19 @@ namespace ProfileService
             loggerFactory.AddDebug();
             ProfileContext.UpdateDatabase(app);
             app.UseMvc();
+
+            var _rawRabbitClient = app.ApplicationServices.GetService<IBusClient>();
+
+            _setupEvents(app, env);
+        }
+
+        private void _setupEvents(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            var Context = app.ApplicationServices.GetService<ProfileContext>();
+            var dbContextOptions = new DbContextOptionsBuilder<ProfileContext>().UseSqlServer(Configuration.GetConnectionString("VacationDatabase")).Options;
+            var _rawRabbitClient = app.ApplicationServices.GetService<IBusClient>(); 
+            var _profileHandle = new AccountCreatedHandlers(dbContextOptions);
+            _rawRabbitClient.SubscribeAsync<AccountCreatedForEmail>(_profileHandle.HandleAsync);
         }
     }
 }

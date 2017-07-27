@@ -15,11 +15,15 @@ using Security.Providers;
 using Microsoft.EntityFrameworkCore;
 using Security.IServiceInterfaces;
 using Security.Services;
+using Security.Setup;
+using RawRabbit.vNext;
+using Security.Options;
 
 namespace Security
 {
     public class Startup
     {
+        private string _contentRootPath;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -28,6 +32,8 @@ namespace Security
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            _contentRootPath = env.ContentRootPath;
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -37,8 +43,14 @@ namespace Security
         {
             services.AddDbContext<AuthContext>(options => options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetSection("AuthDatabase").Value));
             services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
+            services.Configure<ResetPasswordOptions>(Configuration.GetSection("ResetPasswordSettings"));
+            services.AddRawRabbit(cfg => cfg.SetBasePath(_contentRootPath).AddJsonFile("rabbitmq.json"));
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IPermissionService, PermissionService>();
+            services.AddScoped<IRoleService, RoleService>(); 
             services.AddScoped<IVerificationService, VerificationService>();
+            
+            services.AddScoped<IResetPasswordService, ResetPasswordService>();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
@@ -60,7 +72,11 @@ namespace Security
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.Con
+            //AuthContext.UpdateDatabase(app);
+
+            app.ConfigurePermissions();
+
+            app.ConfigureSystemAdmin();
 
             app.UseCors("AllowAllOrigins");
             app.UseMiddleware<TokenProviderMiddleware>();

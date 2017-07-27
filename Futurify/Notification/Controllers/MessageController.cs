@@ -6,7 +6,6 @@ using App.common.core.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Notification.Handles;
 using Notification.IServiceInterfaces;
 using Notification.Models;
 using Notification.Services;
@@ -14,7 +13,7 @@ using RawRabbit;
 using RawRabbit.Context;
 using Vacation.common;
 using Vacation.common.Events;
-
+using Vacation.common.Models;
 
 namespace Notification.Controllers
 {
@@ -32,35 +31,30 @@ namespace Notification.Controllers
             _rawRabbitBus = rawRabbitBus;
             _env = env;
         }
-        // GET api/values
-        [HttpGet]
-        [Route("send")]
-        public async void SendEmail()
+        // GET api/message/send
+        [HttpPost]
+        [Route("ForgotPassword/{Email}")]
+        public async void SendEmailForPasswordRecovery(string Email)
         {
             ConfigSendEmail config = new ConfigSendEmail(_configSendEmail);
 
             try
             {
-                AccountCreatedForEmail accountCreated = new AccountCreatedForEmail();
-                accountCreated.Email = "thanh.kyanon@gmail.com";
-                accountCreated.FirstName = "Thành";
-                accountCreated.Password = "asdqASSDw";
+                PasswordRecovery PasswordRecoveryModel = new PasswordRecovery();
+                PasswordRecoveryModel.ChangePasswordUrl = CommonContants.ForgotPasswordUrl;
                 IMailService emailService = new MailService();
                 IDataStaticService dataService = new DataStaticService(_env);
-                MailTemplate mailTemplate = dataService.GetMailTemplate(CommonContants.AccountCreated);
+                MailTemplate mailTemplate = dataService.GetMailTemplate(CommonContants.ForgotPassword);
                 if (mailTemplate != null)
                 {
-                    config.Receivers = new List<string>() { accountCreated.Email };//send an email
-                    await emailService.SendMail(config, mailTemplate, accountCreated);
+                    config.Receivers = new List<string>() { Email };//send an email
+                    await emailService.SendMail(config, mailTemplate, PasswordRecoveryModel);
                 }
             }
             catch (Exception e)
             {
                 throw;
-            }
-            //var messageHandler = new DemoHandler();
-            //_rawRabbitBus.SubscribeAsync<DemoRabbit>(messageHandler.HandleAsync);
-            //return new string[] { "value1", "value2" };
+            } 
         }
 
         // GET api/values/5

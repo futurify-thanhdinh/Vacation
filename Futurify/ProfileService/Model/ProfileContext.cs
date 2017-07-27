@@ -21,8 +21,7 @@ namespace ProfileService.Model
 
         public  DbSet<Employee> Employees { get; set; }
         public  DbSet<Team> Teams { get; set; }
-        public  DbSet<Position> Positions { get; set; }
-        public  DbSet<Apartment> Apartments { get; set; }
+        public  DbSet<Position> Positions { get; set; } 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
              

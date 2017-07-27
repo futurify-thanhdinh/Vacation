@@ -4,24 +4,24 @@
 		<MailTemplate>
 			<Code>Account Register Futurify Vacation</Code>
 			<Subject>
-				Account details for [FirstName] [LastName] at Futurify Vacation.
+				[Futurify Vacation] Account details for [LastName] [FirstName].
 			</Subject>
 			<Body>
 				<![CDATA[
 				<p>Hi [FirstName],</p><br/>
 				<p>
-				Thank you for registering at Futurify Vacation.
+				Thank you for account registering at Futurify Vacation.
 				</p><br/>
 				<p>
-				You will be able to log in at http//:localhost/ in the future using:
+				You will be able to log in at [LoginUrl] in the future using:
 				</p><br/>
 				<p>
-				e-mail: [Email]
+				<strong>e-mail</strong>: [Email]
 				</p><br/>
 				<p>
-				<!--password: [Password]-->
+				<strong>password</strong>: [Password]
 				</p><br/>
-				-- Futurify Company
+				------ <a href="http://futurify.io">Futurify Company</a> -------
 
 			  ]]>
 			</Body>

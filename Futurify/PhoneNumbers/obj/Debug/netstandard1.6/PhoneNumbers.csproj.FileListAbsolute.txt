@@ -5,13 +5,6 @@ D:\GitHub\JobHopweb\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.csprojRes
 D:\GitHub\JobHopweb\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
 D:\GitHub\JobHopweb\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
 D:\GitHub\JobHopweb\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
-D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.deps.json
-D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.dll
-D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.pdb
-D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.csprojResolveAssemblyReference.cache
-D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
-D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
-D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.deps.json
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.dll
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.pdb
@@ -19,3 +12,10 @@ D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
 D:\Futurify\Github\Vacation\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb
+D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.deps.json
+D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.dll
+D:\GitHub\Vacation\Futurify\PhoneNumbers\bin\Debug\netstandard1.6\PhoneNumbers.pdb
+D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.csprojResolveAssemblyReference.cache
+D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.AssemblyInfo.cs
+D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.dll
+D:\GitHub\Vacation\Futurify\PhoneNumbers\obj\Debug\netstandard1.6\PhoneNumbers.pdb

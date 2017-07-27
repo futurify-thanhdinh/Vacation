@@ -15,15 +15,22 @@ using Security.Adapters;
 using Security.IServiceInterfaces;
 using Security.Models.BindingModels;
 using System.Security.Claims;
+using RawRabbit;
+using Vacation.common.Events;
+using Vacation.common;
 
 namespace Security.Controllers
 {
     [Route("api/account")]
     public class AccountController : Controller
     {
+        private IResetPasswordService _resetpasswordService;
+        private IBusClient _rawRabbitBus;
         private IAccountService _accountService; 
-        public AccountController(IAccountService accountService)
+        public AccountController(IAccountService accountService, IBusClient rawRabbitBus, IResetPasswordService resetpasswordService)
         {
+            _resetpasswordService = resetpasswordService;
+            _rawRabbitBus = rawRabbitBus;
             _accountService = accountService;
         }
         // GET api/values
@@ -48,9 +55,9 @@ namespace Security.Controllers
 
             try
             {
-                if (registerModel.PhoneNumner != null)
+                if (registerModel.PhoneNumber != null)
                 {
-                    var formatedPhoneNumber = PhoneNumbers.PhoneNumberHelpers.GetFormatedPhoneNumber(registerModel.PhoneNumner);
+                    var formatedPhoneNumber = PhoneNumbers.PhoneNumberHelpers.GetFormatedPhoneNumber(registerModel.PhoneNumber);
                     account.PhoneNumber = formatedPhoneNumber;
                 }
                 //standardize phone number
@@ -65,14 +72,13 @@ namespace Security.Controllers
             {
                  new Models.AccountPermission
                  {
-                      PermissionId = "CREATE_USER"
+                      PermissionId = "MEMBER"
                  }
             };
-
+            string password = account.Password;
             account = await _accountService.CreateAsync(account, account.Password);
-
             //publish a jobseeker account is created message to rabbit mq bus
-           // await _rawRabbitBus.PublishAsync(new JobseekerAccountCreated { Id = account.Id, PhoneNumber = account.PhoneNumber, Status = account.Status, FirstName = model.FirstName, LastName = model.LastName, Email = model.Email });
+            await _rawRabbitBus.PublishAsync(new AccountCreatedForEmail { Id = account.AccountId, Password = password, Birthday = registerModel.Birthday, Position  = registerModel.Position, PhoneNumber = account.PhoneNumber, FirstName = registerModel.FirstName, LastName = registerModel.LastName, Email = registerModel.Email, LoginUrl = CommonContants.LoginUrl });
 
             //string smsContent = $"Verification code at JobHop: {account.VerificationCodes.First().VerifyCode}";
 
@@ -86,9 +92,16 @@ namespace Security.Controllers
         }
 
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpGet]
+        [Route("RequestResetPasswordByEmail/{Email}")]
+        public async void RequestResetPasswordByEmail(string Email)
         {
+            var existingAccount = await _accountService.CheckExsitByUserNameAsync(Email);
+
+            if(existingAccount != null)
+            {
+               await _resetpasswordService.SendResetPasswordCodeAndUrl(Email);
+            }
         }
 
         // PUT api/values/5

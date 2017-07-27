@@ -6,18 +6,22 @@ using App.common.core;
 using App.common.core.Exceptions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Security.Helpers;
 using Security.IServiceInterfaces;
 using Security.Models;
+using Security.Options;
 using Vacation.common.Enums;
 
 namespace Security.Services
 {
     public class AccountService : IAccountService
     {
+        
         private AuthContext _context;
         private PasswordHasher<Account> _pwdHasher;
         public AccountService(AuthContext context)
         {
+           
             _context = context;
             _pwdHasher = new PasswordHasher<Account>();
         }
@@ -130,10 +134,10 @@ namespace Security.Services
             
             account.VerificationCodes.Add(new VerificationCode
             {
-                SetPhoneNumber = account.PhoneNumber,
+                CodeReceiver = account.PhoneNumber,
                 ExpiredAt = DateTime.Now.AddDays(1),
                 Purpose = VerificationPurpose.RegistrationPhoneNumber,
-                VerifyCode = CommonFunctions.GenerateVerificationCode(true)
+                Code = CommonFunctions.GenerateVerificationCode(true)
             });
 
             try
@@ -202,6 +206,7 @@ namespace Security.Services
             throw new NotImplementedException();
         }
 
+       
         public async Task SetRoleAsync(int accountId, int roleId)
         {
             throw new NotImplementedException();

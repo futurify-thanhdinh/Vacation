@@ -17,5 +17,11 @@ namespace App.common.core
                 return new Random().Next(10000, 1000000).ToString("D6");
             }
         }
+        public static int ConvertToInt(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return 0;
+            return Int32.Parse(value);
+        }
     }
 }

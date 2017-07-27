@@ -26,7 +26,7 @@ namespace Security.IServiceInterfaces
         Task RemoveRoleAsync(int accountId, int roleId);
         Task Delete(int id);
         Task SetStatusAsync(int accountId, UserStatus status);
-         
-       
+
+        
     }
 }
